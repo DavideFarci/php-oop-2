@@ -1,6 +1,6 @@
 <?php
 
-class Kennel
+class Kennel extends Product
 {
     public function __construct(
         private array $material,

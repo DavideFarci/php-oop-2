@@ -1,6 +1,6 @@
 <?php
 
-class Food
+class Food extends Product
 {
     public function __construct(
         private int $weight,

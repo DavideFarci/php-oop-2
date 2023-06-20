@@ -1,6 +1,6 @@
 <?php
 
-class Game
+class Game extends Product
 {
     public function __construct(
         private string $age,
