@@ -1,5 +1,28 @@
 <?php
 
+$arrTastes = [
+    1 => 'Chicken',
+    2 => 'Salmon',
+    3 => 'Beef',
+    4 => 'Fish',
+    5 => 'Shrimp',
+    6 => 'Tuna'
+];
+
+$types = [
+    1 => 'Chewing',
+    2 => 'Fetching',
+    3 => 'Puzzle',
+    4 => 'Swatting',
+    5 => 'Jumping'
+];
+
+$materials = [
+    1 => 'Plastic',
+    2 => 'Wood',
+    3 => 'Fabric'
+];
+
 $products = [
     'food' => [
         [
