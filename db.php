@@ -59,7 +59,7 @@ $products = [
             'availability' => 'In stock',
             'price' => 30,
             'age' => 'Adult',
-            'dimension' => 'Large',
+            'dimension' => '20 x 10',
             'type' => [1, 4, 3]
         ],
         [
@@ -70,7 +70,7 @@ $products = [
             'availability' => 'In stock',
             'price' => 12,
             'age' => 'Kitten',
-            'dimension' => 'Small',
+            'dimension' => '20 x 10',
             'type' => [2, 3]
         ]
     ],
@@ -83,7 +83,7 @@ $products = [
             'availability' => 'In stock',
             'price' => 80,
             'material' => [1],
-            'dimension' => 'Medium',
+            'dimension' => '50 x 80 x 50',
             'type' => 'Outdoor'
         ],
         [
@@ -94,7 +94,7 @@ $products = [
             'availability' => 'Out of stock',
             'price' => 100,
             'material' => [3, 2],
-            'dimension' => 'Small',
+            'dimension' => '30 x 40 x 40',
             'type' => 'Indoor'
         ]
     ]
@@ -164,12 +164,6 @@ foreach ($products['kennels'] as $kennel) {
         $kennel['type'],
     );
 }
-
-
-
-
-
-
 
 
 // $arrMovies = [];
