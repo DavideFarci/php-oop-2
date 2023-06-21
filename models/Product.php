@@ -8,7 +8,7 @@ class Product
         public string $name,
         public string $description,
         public string $availability,
-        public int $price,
+        private int $price,
     ) {
     }
 
@@ -21,6 +21,6 @@ class Product
     // GET function
     public function getPrice()
     {
-        return $this->price;
+        return $this->price . ' €';
     }
 }
