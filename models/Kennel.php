@@ -33,12 +33,12 @@ class Kennel extends Product
     {
         $typeProduct = get_class($this);
         return "<div class=\"card\" style=\"width: 18rem;\">
-        <img src=\"/img/{$this->image}\" class=\"card-img-top\" alt=\"{$this->image}\">
+        <img style=\"height: 200px;\" src=\"img/{$this->image}\" class=\"card-img-top h-100\" alt=\"{$this->image} \">
         <div class=\"card-body\">
           <h5 class=\"card-title\">{$this->name}</h5>
         </div>
         <ul class=\"list-group list-group-flush\">
-          <li class=\"list-group-item\">Categoria:Tipo di prodotto: {$typeProduct}</li>
+          <li class=\"list-group-item\">Tipo di prodotto: {$typeProduct}</li>
           <li class=\"list-group-item\">Categoria: {$this->category}</li>
           <li class=\"list-group-item\">Prezzo: {$this->getPrice()}</li>
           <li class=\"list-group-item\">Tipo di utilizzo: {$this->type}</li>

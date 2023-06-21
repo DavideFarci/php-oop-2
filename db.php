@@ -39,7 +39,7 @@ $products = [
         ],
         [
             'category' => 'cat',
-            'image' => '51g8WnA9bVL._AC_UF10001000_QL80_.jpg',
+            'image' => 'cibo-gatto.jpg',
             'name' => 'Cat Food',
             'description' => 'Healthy cat food for all ages',
             'availability' => 'Out of stock',
@@ -164,21 +164,3 @@ foreach ($products['kennels'] as $kennel) {
         $kennel['type'],
     );
 }
-
-
-// $arrMovies = [];
-// foreach ($dataMovie as $movie) {
-// 	$movieGenres = [];
-// 	foreach ($movie['genres'] as $index) {
-// 		$movieGenres[] = $arrGenres[$index];
-// 	}
-
-// 	$arrMovies[] = new Movie(
-// 		$movie['title'],
-// 		$movie['year'],
-// 		$movie['country'],
-// 		$movie['language'],
-// 		$movieGenres,
-// 		$movie['img'],
-// 	);
-// }
