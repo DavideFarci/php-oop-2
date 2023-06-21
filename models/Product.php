@@ -6,9 +6,21 @@ class Product
         public string $category, //cane gatto
         public string $image,
         public string $name,
-        public string $descripion,
+        public string $description,
         public string $availability,
-        private int $price,
+        public int $price,
     ) {
+    }
+
+    // SET function
+    public function setprice($price)
+    {
+        $this->price = $price;
+    }
+
+    // GET function
+    public function getPrice()
+    {
+        return $this->price;
     }
 }
