@@ -7,7 +7,7 @@ include_once __DIR__ . '/models/Kennel.php';
 include_once __DIR__ . '/models/Taste.php';
 include_once __DIR__ . '/models/Type.php';
 include_once __DIR__ . '/models/Material.php';
-include __DIR__ . '/db.php';
+include_once __DIR__ . '/db.php';
 
 $arrProducts = array_merge($arrFood, $arrGames, $arrKennels);
 // var_dump($arrFood, $arrGames, $arrKennels);

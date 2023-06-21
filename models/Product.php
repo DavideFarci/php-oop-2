@@ -12,12 +12,6 @@ class Product
     ) {
     }
 
-    // SET function
-    public function setprice($price)
-    {
-        $this->price = $price;
-    }
-
     // GET function
     public function getPrice()
     {
