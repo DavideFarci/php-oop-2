@@ -1,26 +1,26 @@
 <?php
 
 $tastes = [
-    1 => 'Chicken',
-    2 => 'Salmon',
-    3 => 'Beef',
-    4 => 'Fish',
-    5 => 'Shrimp',
-    6 => 'Tuna'
+    new Taste('Chicken'),
+    new Taste('Salmon'),
+    new Taste('Beef'),
+    new Taste('Fish'),
+    new Taste('Shrimp'),
+    new Taste('Tuna')
 ];
 
 $types = [
-    1 => 'Chewing',
-    2 => 'Fetching',
-    3 => 'Puzzle',
-    4 => 'Swatting',
-    5 => 'Jumping'
+    new Type('Chewing'),
+    new Type('Fetching'),
+    new Type('Puzzle'),
+    new Type('Swatting'),
+    new Type('Jumping')
 ];
 
 $materials = [
-    1 => 'Plastic',
-    2 => 'Wood',
-    3 => 'Fabric'
+    new Material('Plastic'),
+    new Material('Wood'),
+    new Material('Fabric')
 ];
 
 $products = [
