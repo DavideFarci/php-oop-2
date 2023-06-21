@@ -27,7 +27,7 @@ $products = [
     'food' => [
         [
             'category' => 'dog',
-            'image' => 'food1.jpg',
+            'image' => 'cibo-cani.png',
             'name' => 'Dog Food',
             'description' => 'Premium dog food for all breeds',
             'availability' => 'In stock',
@@ -39,7 +39,7 @@ $products = [
         ],
         [
             'category' => 'cat',
-            'image' => 'food2.jpg',
+            'image' => '51g8WnA9bVL._AC_UF10001000_QL80_.jpg',
             'name' => 'Cat Food',
             'description' => 'Healthy cat food for all ages',
             'availability' => 'Out of stock',
@@ -53,7 +53,7 @@ $products = [
     'games' => [
         [
             'category' => 'dog',
-            'image' => 'game1.jpg',
+            'image' => 'osso-cane.jpg',
             'name' => 'Interactive Toy',
             'description' => 'Engaging toy for dogs',
             'availability' => 'In stock',
@@ -64,7 +64,7 @@ $products = [
         ],
         [
             'category' => 'cat',
-            'image' => 'game2.jpg',
+            'image' => 'rompicapo-gatto.jpg',
             'name' => 'Feather Teaser',
             'description' => 'Interactive toy for cats',
             'availability' => 'In stock',
@@ -77,7 +77,7 @@ $products = [
     'kennels' => [
         [
             'category' => 'dog',
-            'image' => 'kennel1.jpg',
+            'image' => 'cuccia-cane.jpg',
             'name' => 'Plastic Dog Kennel',
             'description' => 'Durable and easy to clean dog kennel',
             'availability' => 'In stock',
@@ -88,12 +88,12 @@ $products = [
         ],
         [
             'category' => 'cat',
-            'image' => 'kennel2.jpg',
+            'image' => 'cuccia-gatto.jpg',
             'name' => 'Wooden Cat House',
             'description' => 'Stylish cat house for indoor use',
             'availability' => 'Out of stock',
             'price' => 100,
-            'material' => [3, 2],
+            'material' => [0, 2],
             'dimension' => '30 x 40 x 40',
             'type' => 'Indoor'
         ]
