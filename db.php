@@ -1,6 +1,6 @@
 <?php
 
-$arrTastes = [
+$tastes = [
     1 => 'Chicken',
     2 => 'Salmon',
     3 => 'Beef',
@@ -35,7 +35,7 @@ $products = [
             'weight' => 10,
             'type' => 'Dry',
             'age' => 'Adult',
-            'taste' => ['Chicken', 'Beef', 'Fish']
+            'taste' => [1, 3, 5]
         ],
         [
             'category' => 'cat',
@@ -47,7 +47,7 @@ $products = [
             'weight' => 5,
             'type' => 'Wet',
             'age' => 'Kitten',
-            'taste' => ['Tuna', 'Salmon', 'Shrimp']
+            'taste' => [3, 4, 1]
         ]
     ],
     'games' => [
@@ -60,7 +60,7 @@ $products = [
             'price' => 30,
             'age' => 'Adult',
             'dimension' => 'Large',
-            'type' => ['Chewing', 'Fetching', 'Puzzle']
+            'type' => [1, 4, 3]
         ],
         [
             'category' => 'cat',
@@ -71,7 +71,7 @@ $products = [
             'price' => 12,
             'age' => 'Kitten',
             'dimension' => 'Small',
-            'type' => ['Swatting', 'Jumping']
+            'type' => [2, 3]
         ]
     ],
     'kennels' => [
@@ -82,7 +82,7 @@ $products = [
             'description' => 'Durable and easy to clean dog kennel',
             'availability' => 'In stock',
             'price' => 80,
-            'material' => ['Plastic'],
+            'material' => [1],
             'dimension' => 'Medium',
             'type' => 'Outdoor'
         ],
@@ -93,9 +93,98 @@ $products = [
             'description' => 'Stylish cat house for indoor use',
             'availability' => 'Out of stock',
             'price' => 100,
-            'material' => ['Wood', 'Fabric'],
+            'material' => [3, 2],
             'dimension' => 'Small',
             'type' => 'Indoor'
         ]
     ]
 ];
+
+
+$arrFood = [];
+$arrGames = [];
+$arrKennels = [];
+
+//Ciclo sugli array food, games e kennels per popolarli con le istanze, ciclo anche sui loro array associati per estrarre l'index, in modo da utilizzando per richiamare i valori dentro $products
+
+foreach ($products['food'] as $food) {
+    $arrTaste = [];
+    foreach ($food['taste'] as $index) {
+        $arrTaste[] = $tastes[$index];
+    }
+
+    $arrFood[] = new Food(
+        $food['category'],
+        $food['image'],
+        $food['name'],
+        $food['description'],
+        $food['availability'],
+        $food['price'],
+        $food['weight'],
+        $food['type'],
+        $food['age'],
+        $arrTaste
+    );
+}
+
+foreach ($products['games'] as $game) {
+    $arrType = [];
+    foreach ($game['type'] as $index) {
+        $arrType[] = $types[$index];
+    }
+
+    $arrGames[] = new Game(
+        $game['category'],
+        $game['image'],
+        $game['name'],
+        $game['description'],
+        $game['availability'],
+        $game['price'],
+        $game['age'],
+        $game['dimension'],
+        $arrType
+    );
+}
+
+foreach ($products['kennels'] as $kennel) {
+    $arrMaterials = [];
+    foreach ($kennel['material'] as $index) {
+        $arrMaterials[] = $materials[$index];
+    }
+
+    $arrKennels[] = new Kennel(
+        $kennel['category'],
+        $kennel['image'],
+        $kennel['name'],
+        $kennel['description'],
+        $kennel['availability'],
+        $kennel['price'],
+        $arrMaterials,
+        $kennel['dimension'],
+        $kennel['type'],
+    );
+}
+
+
+
+
+
+
+
+
+// $arrMovies = [];
+// foreach ($dataMovie as $movie) {
+// 	$movieGenres = [];
+// 	foreach ($movie['genres'] as $index) {
+// 		$movieGenres[] = $arrGenres[$index];
+// 	}
+
+// 	$arrMovies[] = new Movie(
+// 		$movie['title'],
+// 		$movie['year'],
+// 		$movie['country'],
+// 		$movie['language'],
+// 		$movieGenres,
+// 		$movie['img'],
+// 	);
+// }
