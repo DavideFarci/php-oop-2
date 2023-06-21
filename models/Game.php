@@ -23,6 +23,12 @@ class Game extends Product
         parent::__construct($category, $image, $name, $description, $availability, $price);
     }
 
+    public function implodeArray()
+    {
+        $typeString = implode(', ', $this->type);
+        return $typeString;
+    }
+
     public function getCard()
     {
         $typeProduct = get_class($this);
@@ -36,15 +42,15 @@ class Game extends Product
           <li class=\"list-group-item\">Categoria: {$this->category}</li>
           <li class=\"list-group-item\">Prezzo: {$this->price}</li>
           <li class=\"list-group-item\">Dimensioni: {$this->dimension}</li>
-          <li class=\"list-group-item\">Tipo di gioco: {$this->type}</li>
+          <li class=\"list-group-item\">Tipo di gioco: {$this->implodeArray()}</li>
           <li class=\"list-group-item\">Età: {$this->age}</li>
           <li class=\"list-group-item\">Dimensioni: {$this->dimension}</li>
           <li class=\"list-group-item\">Disponibilità: {$this->availability}</li>
           <li class=\"list-group-item\">Descrizione prodotto: {$this->description}</li>
         </ul>
         <div class=\"card-body\">
-          <a href=\"#\" class=\"card-link\">Card link</a>
-          <a href=\"#\" class=\"card-link\">Another link</a>
+        <a href=\"#\" class=\"card-link\">Compra</a>
+        <a href=\"#\" class=\"card-link\">Aggiungi al carrello</a>
         </div>
       </div>";
     }

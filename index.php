@@ -7,9 +7,10 @@ include_once __DIR__ . '/models/Kennel.php';
 include_once __DIR__ . '/models/Taste.php';
 include_once __DIR__ . '/models/Type.php';
 include_once __DIR__ . '/models/Material.php';
-include_once __DIR__ . '/db.php';
+include __DIR__ . '/db.php';
 
-var_dump($arrFood, $arrGames, $arrKennels);
+$arrProducts = array_merge($arrFood, $arrGames, $arrKennels);
+// var_dump($arrFood, $arrGames, $arrKennels);
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +28,10 @@ var_dump($arrFood, $arrGames, $arrKennels);
 
 <body>
     <div class="container">
-        <div class="row">
-
+        <div class="row"><?php
+                            foreach ($arrProducts as $item) {
+                                echo $item->getCard();
+                            } ?>
         </div>
     </div>
 </body>

@@ -23,6 +23,12 @@ class Kennel extends Product
         parent::__construct($category, $image, $name, $description, $availability, $price);
     }
 
+    public function implodeArray()
+    {
+        $materialString = implode(', ', $this->material);
+        return $materialString;
+    }
+
     public function getCard()
     {
         $typeProduct = get_class($this);
@@ -37,13 +43,13 @@ class Kennel extends Product
           <li class=\"list-group-item\">Prezzo: {$this->price}</li>
           <li class=\"list-group-item\">Tipo di utilizzo: {$this->type}</li>
           <li class=\"list-group-item\">Dimensioni: {$this->dimension}</li>
-          <li class=\"list-group-item\">Materiali: {$this->material}</li>
+          <li class=\"list-group-item\">Materiali: {$this->implodeArray()}</li>
           <li class=\"list-group-item\">Disponibilità: {$this->availability}</li>
           <li class=\"list-group-item\">Descrizione prodotto: {$this->description}</li>
         </ul>
         <div class=\"card-body\">
-          <a href=\"#\" class=\"card-link\">Card link</a>
-          <a href=\"#\" class=\"card-link\">Another link</a>
+          <a href=\"#\" class=\"card-link\">Compra</a>
+          <a href=\"#\" class=\"card-link\">Aggiungi al carrello</a>
         </div>
       </div>";
     }
