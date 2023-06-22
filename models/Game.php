@@ -2,37 +2,39 @@
 
 class Game extends Product
 {
-    public string $age;
-    public string $dimension;
-    public array $type;
-    public function __construct(
-        string $category,
-        string $image,
-        string $name,
-        string $description,
-        string $availability,
-        int $price,
-        string $age,
-        string $dimension,
-        array $type, //intelligenza, forza ecc
-    ) {
-        $this->age = $age;
-        $this->dimension = $dimension;
-        $this->type = $type;
+  public string $age;
+  public string $dimension;
+  public array $type;
+  public function __construct(
+    string $category,
+    string $image,
+    string $name,
+    string $description,
+    string $availability,
+    int $price,
+    string $age,
+    string $dimension,
+    array $type, //intelligenza, forza ecc
+  ) {
+    $this->setPrice($price);
 
-        parent::__construct($category, $image, $name, $description, $availability, $price);
-    }
+    $this->age = $age;
+    $this->dimension = $dimension;
+    $this->type = $type;
 
-    public function implodeArray()
-    {
-        $typeString = implode(', ', $this->type);
-        return $typeString;
-    }
+    parent::__construct($category, $image, $name, $description, $availability, $price);
+  }
 
-    public function getCard()
-    {
-        $typeProduct = get_class($this);
-        return "<div class=\"card\" style=\"width: 18rem;\">
+  public function implodeArray()
+  {
+    $typeString = implode(', ', $this->type);
+    return $typeString;
+  }
+
+  public function getCard()
+  {
+    $typeProduct = get_class($this);
+    return "<div class=\"card\" style=\"width: 18rem;\">
         <img style=\"height: 200px;\" src=\"img/{$this->image}\" class=\"card-img-top h-100\" alt=\"{$this->image} \">
         <div class=\"card-body\">
           <h5 class=\"card-title\">{$this->name}</h5>
@@ -53,5 +55,5 @@ class Game extends Product
         <a href=\"#\" class=\"card-link\">Aggiungi al carrello</a>
         </div>
       </div>";
-    }
+  }
 }

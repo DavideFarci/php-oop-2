@@ -2,37 +2,39 @@
 
 class Kennel extends Product
 {
-    public array $material;
-    public string $dimension;
-    public string $type; //interno o esterno
-    public function __construct(
-        string $category,
-        string $image,
-        string $name,
-        string $description,
-        string $availability,
-        int $price,
-        array $material,
-        string $dimension,
-        string $type,
-    ) {
-        $this->material = $material;
-        $this->dimension = $dimension;
-        $this->type = $type;
+  public array $material;
+  public string $dimension;
+  public string $type; //interno o esterno
+  public function __construct(
+    string $category,
+    string $image,
+    string $name,
+    string $description,
+    string $availability,
+    int $price,
+    array $material,
+    string $dimension,
+    string $type,
+  ) {
+    $this->setPrice($price);
 
-        parent::__construct($category, $image, $name, $description, $availability, $price);
-    }
+    $this->material = $material;
+    $this->dimension = $dimension;
+    $this->type = $type;
 
-    public function implodeArray()
-    {
-        $materialString = implode(', ', $this->material);
-        return $materialString;
-    }
+    parent::__construct($category, $image, $name, $description, $availability, $price);
+  }
 
-    public function getCard()
-    {
-        $typeProduct = get_class($this);
-        return "<div class=\"card\" style=\"width: 18rem;\">
+  public function implodeArray()
+  {
+    $materialString = implode(', ', $this->material);
+    return $materialString;
+  }
+
+  public function getCard()
+  {
+    $typeProduct = get_class($this);
+    return "<div class=\"card\" style=\"width: 18rem;\">
         <img style=\"height: 200px;\" src=\"img/{$this->image}\" class=\"card-img-top h-100\" alt=\"{$this->image} \">
         <div class=\"card-body\">
           <h5 class=\"card-title\">{$this->name}</h5>
@@ -52,5 +54,5 @@ class Kennel extends Product
           <a href=\"#\" class=\"card-link\">Aggiungi al carrello</a>
         </div>
       </div>";
-    }
+  }
 }

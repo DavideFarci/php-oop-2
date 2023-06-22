@@ -27,12 +27,17 @@ $arrProducts = array_merge($arrFood, $arrGames, $arrKennels);
 </head>
 
 <body>
-    <div class="container">
-        <div class="row"><?php
-                            foreach ($arrProducts as $item) {
-                                echo $item->getCard();
-                            } ?>
-        </div>
+    <div class="container"><?php
+                            try { ?>
+            <div class="row"><?php
+                                foreach ($arrProducts as $item) {
+                                    echo $item->getCard();
+                                } ?>
+            </div><?php
+
+                            } catch (Exception $e) { ?>
+            <h2>Problemi con il prezzo</h2><?
+                                        } ?>
     </div>
 </body>
 

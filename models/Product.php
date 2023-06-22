@@ -1,20 +1,19 @@
 <?php
+include_once __DIR__ . '/../traits/Price.php';
+
 
 class Product
 {
+    use Price;
+
     public function __construct(
         public string $category, //cane gatto
         public string $image,
         public string $name,
         public string $description,
         public string $availability,
-        private int $price,
+        int $price,
     ) {
-    }
-
-    // GET function
-    public function getPrice()
-    {
-        return $this->price . ' €';
+        $this->setPrice($price);
     }
 }

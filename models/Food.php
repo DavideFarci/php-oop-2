@@ -2,39 +2,41 @@
 
 class Food extends Product
 {
-    public int $weight;
-    public string $type;
-    public string $age;
-    public array $tastes; // carne, pesce ecc
-    public function __construct(
-        string $category,
-        string $image,
-        string $name,
-        string $description,
-        string $availability,
-        int $price,
-        int $weight,
-        string $type,
-        string $age,
-        array $tastes,
-    ) {
-        parent::__construct($category, $image, $name, $description, $availability, $price);
-        $this->weight = $weight;
-        $this->type = $type;
-        $this->age = $age;
-        $this->tastes = $tastes;
-    }
+  public int $weight;
+  public string $type;
+  public string $age;
+  public array $tastes; // carne, pesce ecc
+  public function __construct(
+    string $category,
+    string $image,
+    string $name,
+    string $description,
+    string $availability,
+    int $price,
+    int $weight,
+    string $type,
+    string $age,
+    array $tastes,
+  ) {
+    parent::__construct($category, $image, $name, $description, $availability, $price);
+    $this->setPrice($price);
 
-    public function implodeArray()
-    {
-        $tastesString = implode(', ', $this->tastes);
-        return $tastesString;
-    }
+    $this->weight = $weight;
+    $this->type = $type;
+    $this->age = $age;
+    $this->tastes = $tastes;
+  }
 
-    public function getCard()
-    {
-        $typeProduct = get_class($this);
-        return "<div class=\"card\" style=\"width: 18rem;\">
+  public function implodeArray()
+  {
+    $tastesString = implode(', ', $this->tastes);
+    return $tastesString;
+  }
+
+  public function getCard()
+  {
+    $typeProduct = get_class($this);
+    return "<div class=\"card\" style=\"width: 18rem;\">
         <img style=\"height: 200px;\" src=\"img/{$this->image}\" class=\"card-img-top\" alt=\"{$this->image} \">
         <div class=\"card-body\">
           <h5 class=\"card-title\">{$this->name}</h5>
@@ -55,5 +57,5 @@ class Food extends Product
         <a href=\"#\" class=\"card-link\">Aggiungi al carrello</a>
         </div>
       </div>";
-    }
+  }
 }
